@@ -1,12 +1,5 @@
 var locations = [
   {
-    title: "Anacostia Community Museum",
-    coord: {
-      lat: 38.856562,
-      lng: -76.976677
-    }
-  },
-  {
     title: "Arthur M. Sackler Gallery",
     coord: {
       lat: 38.887941,
@@ -77,45 +70,10 @@ var locations = [
     }
   },
   {
-    title: "National Portrait Gallery",
-    coord: {
-      lat: 38.897869,
-      lng: -77.023053
-    }
-  },
-  {
-    title: "National Postal Museum",
-    coord: {
-      lat: 38.898097,
-      lng: -77.008238
-    }
-  },
-  {
-    title: "Renwick Gallery",
-    coord: {
-      lat: 38.89914,
-      lng: -77.039032
-    }
-  },
-  {
-    title: "Smithsonian American Art Museum",
-    coord: {
-      lat: 38.897861,
-      lng: -77.022942
-    }
-  },
-  {
     title: "Smithsonian Institution Building (The Castle)",
     coord: {
       lat: 38.888786,
       lng: -77.026023
-    }
-  },
-  {
-    title: "National Zoological Park (National Zoo)",
-    coord: {
-      lat: 38.929616,
-      lng: -77.049784
     }
   }
 ]
@@ -127,7 +85,7 @@ function initMap() {
   // Create map
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 38.88962, lng: -77.022977},
-    zoom: 13
+    zoom: 16
   });
 
   for (var i = 0; i < locations.length; i++) {
