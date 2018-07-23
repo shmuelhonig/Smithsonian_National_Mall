@@ -96,7 +96,7 @@ var locations = [
       lat: 38.89914,
       lng: -77.039032
     }
-  },\
+  },
   {
     title: "Smithsonian American Art Museum",
     coord: {
@@ -119,3 +119,30 @@ var locations = [
     }
   }
 ]
+
+var map;
+var markers = [];
+
+function initMap() {
+  // Create map
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 38.88962, lng: -77.022977},
+    zoom: 13
+  });
+
+  for (var i = 0; i < locations.length; i++) {
+    // Get current title and position
+    var title = locations[i].title;
+    var position = locations[i].coord;
+
+    // Create markers
+    var marker = new google.maps.Marker({
+      map: map,
+      position: position,
+      title: title
+    });
+    // Add marker to array
+    markers.push(marker);
+
+  }
+}
