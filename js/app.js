@@ -102,5 +102,15 @@ function initMap() {
     // Add marker to array
     markers.push(marker);
 
+    // Add infowindow
+    var infowindow = new google.maps.InfoWindow();
+
+    // Open infowindow upon click on marker
+    marker.addListener('click', (function(newMarker) {
+      return function() {
+        infowindow.setContent('<div>' + newMarker.title +  '</div>');
+        infowindow.open(map, newMarker);
+      }
+    }(marker)));
   }
 }
