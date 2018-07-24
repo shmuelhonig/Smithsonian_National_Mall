@@ -135,5 +135,6 @@ var toggleBounce = function(marker) {
 var ViewModel = function() {
   var self = this;
 
+  var observableLocations = ko.observableArray(locations);
 
 }
