@@ -97,7 +97,8 @@ function initMap() {
     var marker = new google.maps.Marker({
       map: map,
       position: position,
-      title: title
+      title: title,
+      animation: null
     });
     // Add marker to array
     markers.push(marker);
