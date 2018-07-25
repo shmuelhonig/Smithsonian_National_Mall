@@ -113,11 +113,13 @@ function initMap() {
         toggleBounce(newMarker);
 
         // Get info from FourSquare API
-        var fourSquare = $.getJSON("https://api.foursquare.com/v2/venues/search?ll=" + position.lat + "," + position.lng + "&name=" + title + "&intent=match&client_id=U1FZTHJMKUL4MR4D2SB00ODHKY2TTH35C4TW5UVMNRAL3RYB&client_secret=H0VSQRKNPIPVOJFJPVJPWBJ2TJ1PRAD5MKA4TGAR2M4KAEZR&v=20180724").done(function(data) {return data.response.venues[0].url}).fail(function(error) {return "FourSquare could not be reached"});
-
-        infowindow.setContent(
-          '<div>' + newMarker.title + '</div>' + '<div>' + fourSquare + '<div>');
+        var fourSquare = $.getJSON("https://api.foursquare.com/v2/venues/search?ll=" + position.lat + "," + position.lng + "&name=" + title + "&intent=match&client_id=U1FZTHJMKUL4MR4D2SB00ODHKY2TTH35C4TW5UVMNRAL3RYB&client_secret=H0VSQRKNPIPVOJFJPVJPWBJ2TJ1PRAD5MKA4TGAR2M4KAEZR&v=20180724").done(function(data) {console.log(JSON.stringify(data));
+          infowindow.setContent(
+          '<div>' + newMarker.title + '</div>' + '<div>' + data.response.venues + '<div>');
         infowindow.open(map, newMarker);
+        }).fail(function(error) {return "FourSquare could not be reached"});
+
+
       }
     }(marker)));
 
