@@ -138,3 +138,7 @@ var ViewModel = function() {
   var observableLocations = ko.observableArray(locations);
 
 }
+
+$('button').click(function() {
+  $('#sidebarCollapse').toggle();
+})
