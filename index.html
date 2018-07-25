@@ -9,13 +9,28 @@
     <title>Smithsonian Map</title>
   </head>
   <body>
-    <div id="sidebar-wrapper">
-      <ul class="sidebar-nav" data-bind="forEach: observableLocations">
-        <li data-bind="title"></li>
-      </ul>
+    <div class="row wrapper">
+      <div id="sidebarCollapse" class="col-3 collapse">
+        <nav id="sidebar">
+          <div class="text-center">
+            Smithsonian at the National Mall
+          </div>
+          <ul>
+            <li class="list-unstyled">
+              gfjdhfsdf
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-1">
+        <button type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">Show/Hide</button>
+      </div>
+      <div class="map-container col-8">
+        <div id="map">
+        </div>
+      </div>
     </div>
-    <div id="map">
-    </div>
+
 
 
 

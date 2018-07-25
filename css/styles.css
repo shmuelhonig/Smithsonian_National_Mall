@@ -4,6 +4,14 @@ html, body {
   padding: 0;
 }
 
+.wrapper {
+  height: 100%;
+}
+
+.map-container {
+  height: 100%;
+}
+
 #map {
   height: 100%;
 }
