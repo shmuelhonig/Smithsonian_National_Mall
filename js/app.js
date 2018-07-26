@@ -139,6 +139,12 @@ var ViewModel = function() {
 
 }
 
+// Toggle show/hide the list view, and adjust map width accordingly
 $('button').click(function() {
   $('#sidebarCollapse').toggle();
+  if ($('.map-container').attr('class').includes("col-8")) {
+    $('.map-container').attr("class", "map-container col-11");
+  } else {
+    $('.map-container').attr("class", "map-container col-8");
+  }
 })
