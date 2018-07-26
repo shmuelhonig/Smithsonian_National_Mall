@@ -80,6 +80,7 @@ var locations = [
 
 var map;
 var markers = [];
+var infowindow;
 
 function initMap() {
   // Create map
@@ -104,28 +105,29 @@ function initMap() {
     markers.push(marker);
 
     // Add infowindow
-    var infowindow = new google.maps.InfoWindow();
+    infowindow = new google.maps.InfoWindow();
 
     // Open infowindow upon click on marker
-    marker.addListener('click', (function(newMarker, newTitle, newPosition) {
-      return function() {
+    marker.addListener('click', (clickToShow(marker, title, position)));
 
-        toggleBounce(newMarker);
+  }
+}
 
-        // Get info from FourSquare API
-        var fourSquare = $.getJSON(
-          "https://api.foursquare.com/v2/venues/search?ll=" + newPosition.lat + "," + newPosition.lng + "&name=" + newTitle + "&intent=match&client_id=U1FZTHJMKUL4MR4D2SB00ODHKY2TTH35C4TW5UVMNRAL3RYB&client_secret=H0VSQRKNPIPVOJFJPVJPWBJ2TJ1PRAD5MKA4TGAR2M4KAEZR&v=20180724"
-        ).done(function(data) {
-          infowindow.setContent(
-            '<div>' + newTitle + '</div>' + '<div>' + data.response.venues[0].location.formattedAddress[0] + '<div>'
-          );
-          infowindow.open(map, newMarker);
-        }).fail(function(error) {return "FourSquare could not be reached"});
+// Function to show animation and infowindow upon click
+var clickToShow = function(newMarker, newTitle, newPosition) {
+  return function() {
 
+    toggleBounce(newMarker);
 
-      }
-    }(marker, title, position)));
-
+    // Get info from FourSquare API
+    var fourSquare = $.getJSON(
+      "https://api.foursquare.com/v2/venues/search?ll=" + newPosition.lat + "," + newPosition.lng + "&name=" + newTitle + "&intent=match&client_id=U1FZTHJMKUL4MR4D2SB00ODHKY2TTH35C4TW5UVMNRAL3RYB&client_secret=H0VSQRKNPIPVOJFJPVJPWBJ2TJ1PRAD5MKA4TGAR2M4KAEZR&v=20180724"
+    ).done(function(data) {
+      infowindow.setContent(
+        '<div>' + newTitle + '</div>' + '<div>' + data.response.venues[0].location.formattedAddress[0] + '<div>'
+      );
+      infowindow.open(map, newMarker);
+    }).fail(function(error) {return "FourSquare could not be reached"});
   }
 }
 
