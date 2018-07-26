@@ -138,6 +138,7 @@ var toggleBounce = function(marker) {
   }
 }
 
+// Create items to populate observable array for tracking
 var Museum = function(data) {
   this.title = ko.observable(data.title);
   this.coord = ko.observable(data.coord);
@@ -146,8 +147,8 @@ var Museum = function(data) {
 var ViewModel = function() {
   var self = this;
 
+  // Populate observable array of locations for tracking
   this.observableLocations = ko.observableArray([]);
-
   locations.forEach(function(location) {
     self.observableLocations.push(new Museum(location));
   });
