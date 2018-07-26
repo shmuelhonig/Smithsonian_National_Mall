@@ -16,7 +16,7 @@
             Smithsonian at the National Mall
           </h1>
           <ul data-bind="foreach: observableLocations">
-            <li class="list-unstyled mt-3" data-bind="text: title">
+            <li class="list-unstyled mt-3" data-bind="text: title, click: $parent.clickList">
             </li>
           </ul>
         </nav>

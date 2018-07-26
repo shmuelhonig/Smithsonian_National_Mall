@@ -154,6 +154,16 @@ var ViewModel = function() {
   locations.forEach(function(location) {
     self.observableLocations.push(new Museum(location));
   });
+
+  for (var i = 0; i < self.observableLocations.length; i++) {
+    self.observableLocations[i].marker = ko.observable(markers[i]);
+  };
+
+  var clickList = clickToShow(
+    self.observableLocations.marker,
+    self.observableLocations.title,
+    self.observableLocations.coord
+  );
 }
 
 // Toggle show/hide the list view, and adjust map width accordingly
