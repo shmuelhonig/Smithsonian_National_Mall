@@ -12,17 +12,17 @@
     <div class="row wrapper">
       <div id="sidebarCollapse" class="col-3">
         <nav id="sidebar">
-          <div class="text-center">
+          <h1 class="text-center">
             Smithsonian at the National Mall
-          </div>
+          </h1>
           <ul data-bind="foreach: observableLocations">
-            <li class="list-unstyled" data-bind="text: title">
+            <li class="list-unstyled mt-3" data-bind="text: title">
             </li>
           </ul>
         </nav>
       </div>
       <div class="col-1">
-        <button type="button">Show/Hide</button>
+        <button type="button" class="mt-3">Show/Hide</button>
       </div>
       <div class="map-container col-8">
         <div id="map">
