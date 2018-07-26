@@ -15,9 +15,8 @@
           <div class="text-center">
             Smithsonian at the National Mall
           </div>
-          <ul>
-            <li class="list-unstyled">
-              gfjdhfsdf
+          <ul data-bind="forEach: observableLocations">
+            <li class="list-unstyled" data-bind="text: title">
             </li>
           </ul>
         </nav>

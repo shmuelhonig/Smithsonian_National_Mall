@@ -132,11 +132,19 @@ var toggleBounce = function(marker) {
   }
 }
 
+var Museum = function(data) {
+  this.title = ko.observable(data.title);
+  this.coord = ko.observable(data.coord);
+}
+
 var ViewModel = function() {
   var self = this;
 
-  var observableLocations = ko.observableArray(locations);
+  this.observableLocations = ko.observableArray([]);
 
+  locations.forEach(function(location) {
+    self.observableLocations.push(new Museum(location));
+  });
 }
 
 // Toggle show/hide the list view, and adjust map width accordingly
