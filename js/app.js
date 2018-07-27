@@ -176,12 +176,8 @@ var ViewModel = function() {
     for (var i = 0; i < self.observableLocations().length; i++) {
       self.observableLocations()[i].pointer = ko.observable(markers[i]);
     }
-    //self.observableLocations()[0].pointer = markers[0];
-    //console.log(self.observableLocations()[0].pointer);
-    console.log(data.pointer(), data.title(), data.coord());
-    //clickToShow(data.pointer(), data.title(), data.coord());
+    clickToShow(data.pointer(), data.title(), data.coord())(data.pointer(), data.title(), data.coord());
   }
-
 }
 
 // Toggle show/hide the list view, and adjust map width accordingly
