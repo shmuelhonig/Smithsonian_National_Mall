@@ -104,6 +104,8 @@ function initMap() {
     // Add marker to array
     markers.push(marker);
 
+    locations[i].pointer = marker;
+
     // Add infowindow
     infowindow = new google.maps.InfoWindow();
 
@@ -144,6 +146,7 @@ var toggleBounce = function(marker) {
 var Museum = function(data) {
   this.title = ko.observable(data.title);
   this.coord = ko.observable(data.coord);
+  this.pointer = ko.observable(data.pointer);
 }
 
 var ViewModel = function() {
@@ -155,15 +158,13 @@ var ViewModel = function() {
     self.observableLocations.push(new Museum(location));
   });
 
-  for (var i = 0; i < self.observableLocations.length; i++) {
-    self.observableLocations[i].marker = ko.observable(markers[i]);
-  };
 
-  var clickList = clickToShow(
-    self.observableLocations.marker,
-    self.observableLocations.title,
-    self.observableLocations.coord
-  );
+
+  this.clickList = function(data) {
+    console.log(data.pointer(), data.title(), data.coord());
+    //clickToShow(data.pointer(), data.title(), data.coord());
+  }
+
 }
 
 // Toggle show/hide the list view, and adjust map width accordingly
