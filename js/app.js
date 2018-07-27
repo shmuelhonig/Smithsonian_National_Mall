@@ -4,88 +4,77 @@ var locations = [
     coord: {
       lat: 38.887941,
       lng: -77.026354
-    },
-    pointer: {}
+    }
   },
   {
     title: "Arts and Industries Building",
     coord: {
       lat: 38.88818,
       lng: -77.0246
-    },
-    pointer: {}
+    }
   },
   {
     title: "Freer Gallery of Art",
     coord: {
       lat: 38.888075,
       lng: -77.0274
-    },
-    pointer: {}
+    }
   },
   {
     title: "Hirshhorn Museum and Sculpture Garden",
     coord: {
       lat: 38.888161,
       lng: -77.022968
-    },
-    pointer: {}
+    }
   },
   {
     title: "National Air and Space Museum",
     coord: {
       lat: 38.88816,
       lng: -77.019868
-    },
-    pointer: {}
+    }
   },
   {
     title: "National Museum of African American History and Culture",
     coord: {
       lat: 38.891064,
       lng: -77.032614
-    },
-    pointer: {}
+    }
   },
   {
     title: "National Museum of African Art",
     coord: {
       lat: 38.887933,
       lng: -77.025507
-    },
-    pointer: {}
+    }
   },
   {
     title: "National Museum of American History",
     coord: {
       lat: 38.891279,
       lng: -77.030051
-    },
-    pointer: {}
+    }
   },
   {
     title: "National Museum of the American Indian",
     coord: {
       lat: 38.888348,
       lng: -77.016503
-    },
-    pointer: {}
+    }
   },
   {
     title: "National Museum of Natural History",
     coord: {
       lat: 38.891266,
       lng: -77.026065
-    },
-    pointer: {}
+    }
   },
   {
     title: "Smithsonian Institution Building (The Castle)",
     coord: {
       lat: 38.888786,
       lng: -77.026023
-    },
-    pointer: {}
+    }
   }
 ]
 
@@ -157,7 +146,6 @@ var toggleBounce = function(marker) {
 var Museum = function(data) {
   this.title = ko.observable(data.title);
   this.coord = ko.observable(data.coord);
-  this.pointer = ko.observable(data.pointer);
 }
 
 var ViewModel = function() {
