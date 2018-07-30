@@ -15,6 +15,10 @@
           <h1 class="text-center">
             Smithsonian at the National Mall
           </h1>
+          <div class="text-center">
+            <input type="text"/>
+            <button type="button">Filter</button>
+          </div>
           <ul data-bind="foreach: observableLocations">
             <li class="list-unstyled mt-3" data-bind="text: title, click: $parent.clickList">
             </li>
