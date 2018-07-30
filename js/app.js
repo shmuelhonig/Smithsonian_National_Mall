@@ -157,7 +157,16 @@ var ViewModel = function() {
     self.observableLocations.push(new Museum(location));
   });
 
-
+  this.formInput = ko.observable("");
+  this.clickFilter = function() {
+    if (self.formInput) {
+      removed = self.observableLocations.remove(function(item) {return !(item.title().includes(self.formInput))});
+    } else {
+      removed.forEach(function(item) {
+        self.observableLocations.push(item);
+      })
+    }
+  }
 
   // Event Listener for clicking list item and associating a list item with a marker
   this.clickList = function(data) {
