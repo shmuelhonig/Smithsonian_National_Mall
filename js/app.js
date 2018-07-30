@@ -158,15 +158,19 @@ var ViewModel = function() {
   });
 
   this.formInput = ko.observable("");
-  this.clickFilter = function() {
-    if (self.formInput) {
-      removed = self.observableLocations.remove(function(item) {return !(item.title().includes(self.formInput))});
+
+
+  // Implement filter for list items (based on http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html)
+  this.filteredItems = ko.computed(function() {
+    var formInput = this.formInput().toLowerCase();
+    if (!formInput) {
+        return this.observableLocations();
     } else {
-      removed.forEach(function(item) {
-        self.observableLocations.push(item);
-      })
+        return ko.utils.arrayFilter(this.observableLocations(), function(location) {
+            return ko.utils.stringStartsWith(location.title().toLowerCase(), formInput);
+        });
     }
-  }
+  }, this);
 
   // Event Listener for clicking list item and associating a list item with a marker
   this.clickList = function(data) {
