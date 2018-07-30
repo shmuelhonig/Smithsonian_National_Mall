@@ -174,8 +174,8 @@ var ViewModel = function() {
 
   // Event Listener for clicking list item and associating a list item with a marker
   this.clickList = function(data) {
-    for (var i = 0; i < self.observableLocations().length; i++) {
-      self.observableLocations()[i].pointer = ko.observable(markers[i]);
+    for (var i = 0; i < self.filteredItems().length; i++) {
+      self.filteredItems()[i].pointer = ko.observable(markers[i]);
     }
     clickToShow(data.pointer(), data.title(), data.coord())(data.pointer(), data.title(), data.coord());
   }
