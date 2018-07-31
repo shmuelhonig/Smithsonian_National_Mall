@@ -15,12 +15,12 @@
           <h1 class="text-center">
             Smithsonian at the National Mall
           </h1>
-          <div class="text-center">
+          <div class="text-center mb-4">
             <input id="filterInput" type="text" data-bind="textInput: formInput"/>
             <button id="filterButton" type="button">Filter</button>
           </div>
           <ul data-bind="foreach: filteredItems">
-            <li class="list-unstyled mt-3" data-bind="text: title, click: $parent.clickList">
+            <li class="list-unstyled mt-0 pt-2 pb-2 border border-dark" data-bind="text: title, click: $parent.clickList">
             </li>
           </ul>
         </nav>
