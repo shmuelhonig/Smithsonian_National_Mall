@@ -172,6 +172,7 @@ var ViewModel = function() {
     }
   }, this);
 
+  // Event listener for filter button that hides markers that have been filtered out
   this.clickFilter = function() {
     for (var i = 0; i < self.observableLocations().length; i++) {
       self.observableLocations()[i].pointer = ko.observable(markers[i]);
