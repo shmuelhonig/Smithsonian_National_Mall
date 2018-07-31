@@ -126,7 +126,7 @@ var clickToShow = function(newMarker, newTitle, newPosition) {
       "https://api.foursquare.com/v2/venues/search?ll=" + newPosition.lat + "," + newPosition.lng + "&name=" + newTitle + "&intent=match&client_id=U1FZTHJMKUL4MR4D2SB00ODHKY2TTH35C4TW5UVMNRAL3RYB&client_secret=H0VSQRKNPIPVOJFJPVJPWBJ2TJ1PRAD5MKA4TGAR2M4KAEZR&v=20180724"
     ).done(function(data) {
       infowindow.setContent(
-        '<div>' + newTitle + '</div>' + '<div>' + data.response.venues[0].location.formattedAddress[0] + '<div>'
+        '<div>' + newTitle + '</div>' + '<div>From FourSquare: ' + data.response.venues[0].location.formattedAddress[0] + '<div>'
       );
       infowindow.open(map, newMarker);
     }).fail(function(error) {return "FourSquare could not be reached"});
