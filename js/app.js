@@ -172,8 +172,8 @@ var ViewModel = function() {
     }
   }, this);
 
-  // Event listener for filter button that associates a list item with a marker and hides markers that have been filtered out
-  this.clickFilter = function() {
+  // Subscribe to form input so that whenever its value changes it associates the list items with a marker and hides markers that have been filtered out
+  this.formInput.subscribe(function() {
     for (var i = 0; i < self.observableLocations().length; i++) {
       self.observableLocations()[i].pointer = ko.observable(markers[i]);
       if (self.filteredItems().indexOf(self.observableLocations()[i]) >= 0) {
@@ -182,7 +182,8 @@ var ViewModel = function() {
         self.observableLocations()[i].pointer().setVisible(false);
       }
     }
-  }
+  })
+
 
   // Event Listener for clicking list item
   this.clickList = function(data) {
