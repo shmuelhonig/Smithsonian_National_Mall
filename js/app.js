@@ -172,12 +172,14 @@ var ViewModel = function() {
     }
   }, this);
 
-  for (var i = 0; i < self.observableLocations().length; i++) {
-    self.observableLocations()[i].pointer = ko.observable(markers[i]);
-    if (self.filteredItems().indexOf(self.observableLocations()[i]) >= 0) {
-      self.observableLocations()[i].pointer().setVisible(true);
-    } else {
-      self.observableLocations()[i].pointer().setVisible(false);
+  this.clickFilter = function() {
+    for (var i = 0; i < self.observableLocations().length; i++) {
+      self.observableLocations()[i].pointer = ko.observable(markers[i]);
+      if (self.filteredItems().indexOf(self.observableLocations()[i]) >= 0) {
+        self.observableLocations()[i].pointer().setVisible(true);
+      } else {
+        self.observableLocations()[i].pointer().setVisible(false);
+      }
     }
   }
 

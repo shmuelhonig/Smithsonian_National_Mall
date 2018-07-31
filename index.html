@@ -17,7 +17,7 @@
           </h1>
           <div class="text-center">
             <input id="filterInput" type="text" data-bind="value: formInput"/>
-            <button id="filterButton" type="button">Filter</button>
+            <button id="filterButton" type="button" data-bind="click: clickFilter">Filter</button>
           </div>
           <ul data-bind="foreach: filteredItems">
             <li class="list-unstyled mt-3" data-bind="text: title, click: $parent.clickList">
