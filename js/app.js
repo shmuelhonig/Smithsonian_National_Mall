@@ -172,7 +172,7 @@ var ViewModel = function() {
     }
   }, this);
 
-  // Event listener for filter button that hides markers that have been filtered out
+  // Event listener for filter button that associates a list item with a marker and hides markers that have been filtered out
   this.clickFilter = function() {
     for (var i = 0; i < self.observableLocations().length; i++) {
       self.observableLocations()[i].pointer = ko.observable(markers[i]);
@@ -184,9 +184,10 @@ var ViewModel = function() {
     }
   }
 
-  // Event Listener for clicking list item and associating a list item with a marker
+  // Event Listener for clicking list item
   this.clickList = function(data) {
     for (var i = 0; i < self.filteredItems().length; i++) {
+      // this next line is necessary to associate markers in case the user has not actually used the filter
       self.filteredItems()[i].pointer = ko.observable(markers[i]);
     }
     clickToShow(data.pointer(), data.title(), data.coord())(data.pointer(), data.title(), data.coord());
