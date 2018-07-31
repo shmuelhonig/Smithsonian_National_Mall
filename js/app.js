@@ -173,11 +173,11 @@ var ViewModel = function() {
   }, this);
 
   for (var i = 0; i < self.observableLocations().length; i++) {
-    //self.observableLocations()[i].pointer = ko.observable(markers[i]);
+    self.observableLocations()[i].pointer = ko.observable(markers[i]);
     if (self.filteredItems().indexOf(self.observableLocations()[i]) >= 0) {
-      markers[i].setVisible(true);
+      self.observableLocations()[i].pointer().setVisible(true);
     } else {
-      markers[i].setVisible(false);
+      self.observableLocations()[i].pointer().setVisible(false);
     }
   }
 
