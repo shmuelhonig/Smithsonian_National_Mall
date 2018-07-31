@@ -172,16 +172,6 @@ var ViewModel = function() {
     }
   }, this);
 
-  // Hide markers if list item is filtered out
-  for (var i = 0; i < self.observableLocations().length; i++) {
-    for (var i = 0; i < self.filteredItems().length; i++) {
-      if (!(self.observableLocations()[i] == self.filteredItems()[i])) {
-        self.observableLocations()[i].pointer.setVisible(false);
-      }
-    }
-  }
-
-
   // Event Listener for clicking list item and associating a list item with a marker
   this.clickList = function(data) {
     for (var i = 0; i < self.filteredItems().length; i++) {
