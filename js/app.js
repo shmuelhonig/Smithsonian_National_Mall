@@ -172,6 +172,15 @@ var ViewModel = function() {
     }
   }, this);
 
+  for (var i = 0; i < self.observableLocations().length; i++) {
+    //self.observableLocations()[i].pointer = ko.observable(markers[i]);
+    if (self.filteredItems().indexOf(self.observableLocations()[i]) >= 0) {
+      markers[i].setVisible(true);
+    } else {
+      markers[i].setVisible(false);
+    }
+  }
+
   // Event Listener for clicking list item and associating a list item with a marker
   this.clickList = function(data) {
     for (var i = 0; i < self.filteredItems().length; i++) {
