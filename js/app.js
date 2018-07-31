@@ -128,7 +128,11 @@ var clickToShow = function(newMarker, newTitle, newPosition) {
       infowindow.setContent(
         '<div>' + newTitle + '</div>' + '<div>From FourSquare: ' + data.response.venues[0].location.formattedAddress[0] + '<div>'
       );
-      infowindow.open(map, newMarker);
+      if (infowindow.getMap() == null) {
+        infowindow.open(map, newMarker);
+      } else {
+        infowindow.close();
+      }
     }).fail(function(error) {return "FourSquare could not be reached"});
   }
 }
