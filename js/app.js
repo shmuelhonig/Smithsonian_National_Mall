@@ -344,17 +344,15 @@ function initMap() {
       title: title,
       animation: null
     });
+
     // Add marker to array
     markers.push(marker);
-
-
 
     // Add infowindow
     infowindow = new google.maps.InfoWindow();
 
     // Open infowindow upon click on marker
     marker.addListener('click', (clickToShow(marker, title, position)));
-
   }
 }
 
@@ -402,7 +400,6 @@ var ViewModel = function() {
 
   this.formInput = ko.observable("");
 
-
   // Implement filter for list items (based on http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html)
   this.filteredItems = ko.computed(function() {
     var formInput = this.formInput().toLowerCase();
@@ -426,7 +423,6 @@ var ViewModel = function() {
       }
     }
   })
-
 
   // Event Listener for clicking list item
   this.clickList = function(data) {
