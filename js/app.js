@@ -443,7 +443,9 @@ $('#collapseButton').click(function() {
   $('#sidebarCollapse').toggle();
   if ($('.map-container').attr('class').includes("col-8")) {
     $('.map-container').attr("class", "map-container col-11");
+    $('#collapseButton').text("Show");
   } else {
     $('.map-container').attr("class", "map-container col-8");
+    $('#collapseButton').text("Hide");
   }
 })
