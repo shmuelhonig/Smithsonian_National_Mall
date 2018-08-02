@@ -379,7 +379,7 @@ var clickToShow = function(newMarker, newTitle, newPosition) {
   }
 }
 
-// Animate marker with a bounce; taken from Google sample
+// Animate marker with a bounce; based on Google sample
 var toggleBounce = function(marker) {
   for (var i = 0; i < markers.length; i++) {
     if (markers[i].getAnimation() !== null) {
