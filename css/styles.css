@@ -18,6 +18,7 @@ html, body {
 
 #sidebarCollapse {
   font-size: 0.85rem;
+  overflow-y: scroll;
 }
 
 h1 {
