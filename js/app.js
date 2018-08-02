@@ -381,11 +381,12 @@ var clickToShow = function(newMarker, newTitle, newPosition) {
 
 // Animate marker with a bounce; taken from Google sample
 var toggleBounce = function(marker) {
-  if (marker.getAnimation() !== null) {
-    marker.setAnimation(null);
-  } else {
-    marker.setAnimation(google.maps.Animation.BOUNCE);
+  for (var i = 0; i < markers.length; i++) {
+    if (markers[i].getAnimation() !== null) {
+      markers[i].setAnimation(null);
+    }
   }
+  marker.setAnimation(google.maps.Animation.BOUNCE);
 }
 
 // Create items to populate observable array for tracking
