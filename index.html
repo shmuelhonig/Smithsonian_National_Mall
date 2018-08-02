@@ -16,8 +16,7 @@
             Smithsonian at the National Mall
           </h1>
           <div class="text-center mb-4">
-            <input id="filterInput" type="text" size="15" data-bind="textInput: formInput"/>
-            <button id="filterButton" type="button">Filter</button>
+            <input id="filterInput" type="text" size="15" placeholder="Filter" data-bind="textInput: formInput"/>
           </div>
           <ul data-bind="foreach: filteredItems">
             <li class="list-unstyled mt-0 pt-2 pb-2 border border-dark" data-bind="text: title, click: $parent.clickList">
