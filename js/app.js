@@ -450,3 +450,5 @@ $('#collapseButton').click(function() {
     $('#collapseButton').text("Hide");
   }
 })
+
+ko.applyBindings(new ViewModel());
