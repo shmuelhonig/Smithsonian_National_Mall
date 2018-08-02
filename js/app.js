@@ -412,6 +412,9 @@ var ViewModel = function() {
     if (!formInput) {
         return this.observableLocations();
     } else {
+      for (var i = 0; i < markers.length; i++) {
+        infowindow.close();
+      }
         return ko.utils.arrayFilter(this.observableLocations(), function(location) {
             return ko.utils.stringStartsWith(location.title().toLowerCase(), formInput);
         });
