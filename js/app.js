@@ -379,13 +379,19 @@ var clickToShow = function(newMarker, newTitle, newPosition) {
   }
 }
 
-// Animate marker with a bounce; based on Google sample
-var toggleBounce = function(marker) {
+// Close all infowindows and stop animations
+var closeWindowsStopAnimations = function() {
   for (var i = 0; i < markers.length; i++) {
+    infowindow.close();
     if (markers[i].getAnimation() !== null) {
       markers[i].setAnimation(null);
     }
   }
+}
+
+// Animate marker with a bounce; based on Google sample
+var toggleBounce = function(marker) {
+  closeWindowsStopAnimations();
   marker.setAnimation(google.maps.Animation.BOUNCE);
 }
 
@@ -412,12 +418,7 @@ var ViewModel = function() {
     if (!formInput) {
         return this.observableLocations();
     } else {
-        for (var i = 0; i < markers.length; i++) {
-          infowindow.close();
-          if (markers[i].getAnimation() !== null) {
-            markers[i].setAnimation(null);
-          }
-        }
+        closeWindowsStopAnimations();
         return ko.utils.arrayFilter(this.observableLocations(), function(location) {
             return ko.utils.stringStartsWith(location.title().toLowerCase(), formInput);
         });
