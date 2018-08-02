@@ -414,6 +414,9 @@ var ViewModel = function() {
     } else {
         for (var i = 0; i < markers.length; i++) {
           infowindow.close();
+          if (markers[i].getAnimation() !== null) {
+            markers[i].setAnimation(null);
+          }
         }
         return ko.utils.arrayFilter(this.observableLocations(), function(location) {
             return ko.utils.stringStartsWith(location.title().toLowerCase(), formInput);
