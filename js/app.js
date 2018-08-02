@@ -356,6 +356,11 @@ function initMap() {
   }
 }
 
+// Error handling for the Google Maps API
+function mapError() {
+  alert("An error has occured while trying to reach the Google Maps API");
+}
+
 // Function to show animation and infowindow upon click
 var clickToShow = function(newMarker, newTitle, newPosition) {
   return function() {
