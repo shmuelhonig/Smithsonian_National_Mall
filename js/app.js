@@ -369,7 +369,7 @@ var clickToShow = function(newMarker, newTitle, newPosition) {
 
     // Get info from FourSquare API
     var fourSquare = $.getJSON(
-      "https://api.foursquare.com/v2/venues/search?ll=" + newPosition.lat + "," + newPosition.lng + "&name=" + newTitle + "&intent=match&client_id=U1FZTHJMKUL4MR4D2SB00ODHKY2TTH35C4TW5UVMNRAL3RYB&client_secret=H0VSQRKNPIPVOJFJPVJPWBJ2TJ1PRAD5MKA4TGAR2M4KAEZR&v=20180724"
+      "https://api.foursquare.com/v2/venues/search?ll=" + newPosition.lat + "," + newPosition.lng + "&name=" + newTitle + "&intent=match&client_id=FOURSQUARE_CLIENT_ID&client_secret=FOURSQUARE_CLIENT_SECRET&v=20180724"
     ).done(function(data) {
       infowindow.setContent(
         '<div>' + newTitle + '</div>' + '<div>From FourSquare: ' + data.response.venues[0].location.formattedAddress[0] + '<div>'

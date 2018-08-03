@@ -4,4 +4,4 @@ This project uses JavaScript and Knockout.js to create a single page application
 
 # Usage
 
-Open the index.html file in a browser window. When loading this app, please use your own Google Maps and FourSquare API keys. Thank you!
+Open the index.html file in a browser window. When loading this app, each user will need to supply his or her own Google Maps and FourSquare API keys.
